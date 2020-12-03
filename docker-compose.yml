@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:stable-alpine
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d
+      - ./v1:/srv/api-v1/public
+      - ./v2:/srv/api-v2/public
+    ports:
+      - 8080:80
